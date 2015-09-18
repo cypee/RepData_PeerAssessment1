@@ -2,7 +2,7 @@
 
 
 ## Loading and preprocessing the data
-1. Load the data.
+####1. Load the data.
 
 ```r
     library(ggplot2)
@@ -35,7 +35,7 @@
     data <- read.csv(datafile,header=TRUE)
 ```
 
-2. Process/transform the data (if necessary) into a format suitable for analysis
+####2. Process/transform the data (if necessary) into a format suitable for analysis
 
 
 ```r
@@ -52,7 +52,7 @@
 
 ## What is mean total number of steps taken per day?
 
-1. Make a histogram of the total number of steps taken each day
+####1. Make a histogram of the total number of steps taken each day
 
 ```r
     steps_by_date <- aggregate(steps~date, data, sum)
@@ -66,7 +66,7 @@
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
-2. Calculate and report the mean total number of steps taken per day
+####2. Calculate and report the mean total number of steps taken per day
 
 
 ```r
@@ -77,7 +77,7 @@
 ## [1] 10766.19
 ```
 
-3. Calculate and report the median total number of steps taken per day
+####3. Calculate and report the median total number of steps taken per day
 
 ```r
     median(steps_by_date$steps)
@@ -89,7 +89,7 @@
 
 ## What is the average daily activity pattern?
 
-1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+####1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 
 
@@ -103,7 +103,7 @@
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
-2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+####2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
     steps_by_interval$interval[steps_by_interval$steps==max(steps_by_interval$steps)]
@@ -115,7 +115,7 @@
 
 ## Imputing missing values
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+####1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
 
 ```r
@@ -127,7 +127,7 @@
 ## [1] 2304
 ```
 
-2. NA of steps are replaced by the average of 5-minute interval.
+####2. NA of steps are replaced by the average of 5-minute interval.
 
 
 ```r
@@ -142,7 +142,7 @@
 ```
 
 
-3. The new dataset without NA is:
+####3. The new dataset without NA is:
 
 
 ```r
@@ -159,7 +159,7 @@
 ## 6 2.0943396 2012-10-01       25
 ```
 
-4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+####4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
 
 ```r
@@ -193,12 +193,12 @@
 ## [1] 10765.00 10766.19
 ```
 
-When replacing the NA values with the mean for that 5-minute interval, the impact on the mean and median of total steps taken per day is limited.
+### When replacing the NA values with the mean for that 5-minute interval, the impact on the mean and median of total steps taken per day is limited.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
 
-1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+####1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 
 ```r
@@ -242,7 +242,7 @@ When replacing the NA values with the mean for that 5-minute interval, the impac
 ```
 
 
-2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:
+#### 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:
 
 
 ```r
